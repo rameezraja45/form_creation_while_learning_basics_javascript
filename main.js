@@ -1,7 +1,18 @@
-document.getElementById("myButton").onclick= function(){
+function saveToLocalStorage(event){
+  event.preventDefault();
+  const name=event.target.username.value;
+  const email=event.target.EmailId.value;
+  const phonenumber=event.target.phonenumber.value;
+  // localStorage.setItem('name', name);
+  // localStorage.setItem('email', email);
+  // localStorage.setItem('phonenumber', phonenumber);
   
-  let myName=document.getElementById("name").value;
-  let myEmail=document.getElementById("email").value;
- 
-  localStorage.setItem(myName , myEmail)  
+
+  const obj={
+      name: name,
+      email: email,
+      phonenumber:phonenumber
+  }
+  localStorage.setItem('userDetails',JSON.stringify(obj))
+  
 }
